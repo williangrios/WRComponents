@@ -1,0 +1,38 @@
+{
+  "name": "wrcomponents",
+  "version": "1.0.45",
+  "description": "WR Components for personal use",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": ["dist", "assets", "README.md"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "WR",
+    "Personal",
+    "Components"
+  ],
+  "author": "Willian Rios",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.5.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "scripts": {
+    "start": "webpack serve --progress --hot --port 8080",
+    "build": "cross-env NODE_ENV=production babel src --out-dir dist"
+  }
+
+}
