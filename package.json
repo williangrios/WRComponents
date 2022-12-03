@@ -1,6 +1,6 @@
 {
   "name": "wrcomponents",
-  "version": "1.0.45",
+  "version": "1.0.46",
   "description": "WR Components for personal use",
   "main": "dist/index.js",
   "module": "dist/index.js",

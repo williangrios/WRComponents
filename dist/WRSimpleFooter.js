@@ -7,8 +7,7 @@ exports["default"] = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _logo = _interopRequireDefault(require("../assets/logo.png"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var WRSimpleFooter = function WRSimpleFooter(_ref) {
-  var props = _ref.props;
+var WRSimpleFooter = function WRSimpleFooter(props) {
   return /*#__PURE__*/_react["default"].createElement("footer", {
     style: styles.footer
   }, /*#__PURE__*/_react["default"].createElement("div", {

@@ -7,8 +7,7 @@ exports["default"] = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _logo = _interopRequireDefault(require("../assets/logo.png"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var WRHeader = function WRHeader(_ref) {
-  var props = _ref.props;
+var WRHeader = function WRHeader(props) {
   return /*#__PURE__*/_react["default"].createElement("header", {
     style: styles.header
   }, props.image && /*#__PURE__*/_react["default"].createElement("img", {

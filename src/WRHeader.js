@@ -2,7 +2,7 @@ import React from "react";
 import logo from '../assets/logo.png';
 
 
-const WRHeader = ({props}) => {
+const WRHeader = (props) => {
     return(
         <header style={styles.header} >
             {props.image &&  (

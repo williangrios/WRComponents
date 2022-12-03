@@ -2,7 +2,7 @@ import React from "react";
 import logo from '../assets/logo.png';
 
 
-const WRSimpleFooter = ({props}) => {
+const WRSimpleFooter = (props) => {
     return (
       <footer style={styles.footer}>
         
@@ -56,7 +56,8 @@ const WRSimpleFooter = ({props}) => {
       },
 
     wrdata: {
-        marginBottom: "30px",
+        marginBottom: "20px",
+        marginTop: "20px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center"
