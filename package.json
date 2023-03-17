@@ -1,12 +1,17 @@
 {
   "name": "wrcomponents",
-  "version": "1.0.46",
+  "version": "1.0.82",
   "description": "WR Components for personal use",
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "files": ["dist", "assets", "README.md"],
+  "files": [
+    "dist",
+    "assets",
+    "README.md"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack serve --progress --hot --port 8080",
+    "build": "cross-env NODE_ENV=production babel src --out-dir dist"
   },
   "keywords": [
     "WR",
@@ -30,9 +35,7 @@
     "webpack-cli": "^5.0.0",
     "webpack-dev-server": "^4.11.1"
   },
-  "scripts": {
-    "start": "webpack serve --progress --hot --port 8080",
-    "build": "cross-env NODE_ENV=production babel src --out-dir dist"
+  "dependencies": {
+    "firebase": "^9.15.0"
   }
-
 }

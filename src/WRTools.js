@@ -1,5 +1,6 @@
 import React from "react";
 import photo from "../assets/WILLOK.png";
+import ipfs from "../assets/ipfslogo.svg";
 
 const WRTools = (props) => (
     <div style={styles.divContainer}>
@@ -15,6 +16,12 @@ const WRTools = (props) => (
                 <div style={styles.divCardTool}>
                     <img src="https://pcodinomebzero.neocities.org/Imagens/javascript1.png" style={styles.imgm}/>
                     <p>Javascript</p>
+                </div>
+            }
+            {props.typescript &&
+                <div style={styles.divCardTool}>
+                    <img src="https://cdn-icons-png.flaticon.com/512/919/919832.png" style={styles.imgm}/>
+                    <p>Typescript</p>
                 </div>
             }
             {props.css &&
@@ -78,6 +85,13 @@ const WRTools = (props) => (
                     <p>Drizzle</p>
                 </div>
             }
+            {props.ipfs &&
+                <div style={styles.divCardTool}>
+                    <img src={ipfs} style={styles.imgm}/>
+                    <p>IPFS</p>
+                </div>
+            }
+
             <div style={styles.divCardTool}>
                 <img src={photo} style={styles.imgm}/>
                 <p style={styles.smallfont}>WR Components</p>
@@ -120,12 +134,20 @@ const styles = {
     },
 
     divTools: {
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
+        padding: "20px",
         justifyContent: "center",
-        width: "100%",
-        padding: "15px",
+        justifyItems: "center",
+        display: "grid",
+        gridGap: "20px",
+        gridTemplateColumns: "repeat(auto-fit, minmax(90px, 1fr))"
+
+
+        // display: "flex",
+        // flexDirection: "row",
+        // alignItems: "center",
+        // justifyContent: "center",
+        // width: "100%",
+        // padding: "15px",
     },
     
     divCardTool: {

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from '../assets/logo.png';
+
 
 
 const WRSimpleFooter = (props) => {

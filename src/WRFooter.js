@@ -5,9 +5,31 @@ import whatsapp from "../assets/whatsapp.png";
 import linkedin from "../assets/linkedin.png";
 import twitter from "../assets/twitter.png";
 import site from "../assets/site.png";
-
+import dataServices from "./services/dataServices";
+import { returnRegistersFromSnapshot } from "./services/dataReturn";
+import { useEffect, useState } from "react";
+import star1 from '../assets/star1.png';
+import star2 from '../assets/star2.png';
+import star3 from '../assets/star3.png';
+import star4 from '../assets/star4.png';
 
 const WRFooter = () => {
+
+    const [projectsList, setProjectsList] = useState([]);
+
+    useEffect( () => {
+
+      async function getProjects(){
+        let snapshotProjects = await dataServices.getAllDocs('projects', 'projectId', 'desc');
+        let projectsToTable = returnRegistersFromSnapshot(snapshotProjects, 'projects');
+        setProjectsList(projectsToTable);
+      }
+
+      getProjects()
+      
+    }, [])
+    
+
     return (
       <footer style={styles.footer}>
           <div style={styles.wrdata}>
@@ -21,13 +43,21 @@ const WRFooter = () => {
                 <a href='https://wrsolucoesdigitais.com.br' target={'_blank'}><img src={site} style={styles.imgLinks} /></a>
               </div>
           </div>
-  
-          <div style={styles.wrdata}>
-              <p style={styles.paragrafo}>Web3 Projects</p>
-              <p style={styles.paragrafo}>Project 1: ToDo DApp</p>
-              <p style={styles.paragrafo}>Project 2:</p>
-              <p style={styles.paragrafo}>Project 3:</p>
-          </div>
+          {projectsList.map((item) => { 
+            let stars;
+            if (item.projectStars == 1){
+              stars = star1;
+            }else if (item.projectStars == 2){
+              stars = star2;
+            }else if (item.projectStars == 3){
+              stars = star3;
+            }else if (item.projectStars == 4){
+              stars = star4;
+            }
+            
+            return(
+                <p key={item.projectId} style={styles.paragrafo}>{item.projectId} - {item.projectName} / <img style={styles.estrelas} src={stars} /> / <a href={item.projectSite} target="_blank"> LINK </a> </p>)
+              })}
           
       </footer>
     )
@@ -78,9 +108,18 @@ const WRFooter = () => {
       alignItems: "center"
     },
 
+    estrelas: {
+      height: "15px"
+    },
+
     paragrafo: {
         color: "white",
         fontFamily: "'Courier New', Courier, monospace"
+    },
+
+    projs: {
+      display: "flex",
+      flexDirection: "row"
     }
 
 }

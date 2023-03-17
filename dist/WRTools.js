@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _WILLOK = _interopRequireDefault(require("../assets/WILLOK.png"));
+var _ipfslogo = _interopRequireDefault(require("../assets/ipfslogo.svg"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var WRTools = function WRTools(props) {
   return /*#__PURE__*/_react["default"].createElement("div", {
@@ -24,7 +25,12 @@ var WRTools = function WRTools(props) {
   }, /*#__PURE__*/_react["default"].createElement("img", {
     src: "https://pcodinomebzero.neocities.org/Imagens/javascript1.png",
     style: styles.imgm
-  }), /*#__PURE__*/_react["default"].createElement("p", null, "Javascript")), props.css && /*#__PURE__*/_react["default"].createElement("div", {
+  }), /*#__PURE__*/_react["default"].createElement("p", null, "Javascript")), props.typescript && /*#__PURE__*/_react["default"].createElement("div", {
+    style: styles.divCardTool
+  }, /*#__PURE__*/_react["default"].createElement("img", {
+    src: "https://cdn-icons-png.flaticon.com/512/919/919832.png",
+    style: styles.imgm
+  }), /*#__PURE__*/_react["default"].createElement("p", null, "Typescript")), props.css && /*#__PURE__*/_react["default"].createElement("div", {
     style: styles.divCardTool
   }, /*#__PURE__*/_react["default"].createElement("img", {
     src: "https://logospng.org/download/css-3/logo-css-3-2048.png",
@@ -74,7 +80,12 @@ var WRTools = function WRTools(props) {
   }, /*#__PURE__*/_react["default"].createElement("img", {
     src: "https://seeklogo.com/images/D/drizzle-logo-7D6FE5DB33-seeklogo.com.png",
     style: styles.imgm
-  }), /*#__PURE__*/_react["default"].createElement("p", null, "Drizzle")), /*#__PURE__*/_react["default"].createElement("div", {
+  }), /*#__PURE__*/_react["default"].createElement("p", null, "Drizzle")), props.ipfs && /*#__PURE__*/_react["default"].createElement("div", {
+    style: styles.divCardTool
+  }, /*#__PURE__*/_react["default"].createElement("img", {
+    src: _ipfslogo["default"],
+    style: styles.imgm
+  }), /*#__PURE__*/_react["default"].createElement("p", null, "IPFS")), /*#__PURE__*/_react["default"].createElement("div", {
     style: styles.divCardTool
   }, /*#__PURE__*/_react["default"].createElement("img", {
     src: _WILLOK["default"],
@@ -109,13 +120,21 @@ var styles = {
     fontSize: "0.7em"
   },
   divTools: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
+    padding: "20px",
     justifyContent: "center",
-    width: "100%",
-    padding: "15px"
+    justifyItems: "center",
+    display: "grid",
+    gridGap: "20px",
+    gridTemplateColumns: "repeat(auto-fit, minmax(90px, 1fr))"
+
+    // display: "flex",
+    // flexDirection: "row",
+    // alignItems: "center",
+    // justifyContent: "center",
+    // width: "100%",
+    // padding: "15px",
   },
+
   divCardTool: {
     backgroundColor: "#FFF",
     display: "flex",
